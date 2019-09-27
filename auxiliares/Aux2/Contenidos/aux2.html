@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="avenir-white.css" />
+	<title>Auxiliar Nº 2</title>
+</head>
+<body>
+	<h1>CC5002-1 Primavera 2019</h1>
+
+	<h1>Auxiliar 2</h1>
+
+	<h2>HTML Básico</h2>
+
+	<p>HTML es un formato destinado a estructurar documentos a través de su sintaxis consistente en etiquetas que contienen el contenido a desplegar.
+	Todo documento HTML se compone de 2 secciones principales, el encabezado (&lt;head&gt;) y el cuerpo (&lt;body&gt;). El elemento raíz es <html>
+	Además, siempre se debe declarar la especificación de HTML a utilizar. </p>
+
+	<p>Para HTML 4 se debe indicar:</p>
+
+	<p><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</code></p>
+
+	<p>Para HTML 5 se debe indicar:</p>
+
+	<p><code>&lt;!DOCTYPE html&gt;</code></p>
+
+	<p>Un documento mínimo en HTML es el siguiente (<a href="./aux2-1.html">aux2-1.html</a>)</p>
+
+	<pre><code>&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	    &lt;head&gt;
+	        &lt;title&gt;Este es el título de la página.&lt;/title&gt;
+	    &lt;/head&gt;
+	    &lt;body&gt;
+	        Aquí van los elementos de la página.
+	    &lt;/body&gt;
+	&lt;/html&gt;
+	</code></pre>
+
+	<h2>Etiqueta de encabezado <code>&lt;head&gt;</code> (<a href="./aux2-2.html">aux2-2.html</a>)</h2>
+
+	<p>La etiqueta del encabezado consiste en información no visible para el usuario, 
+	    pero que es importante para el correcto despliegue del contenido HTML.
+	    Aqui se puede definir el título de la página con el tag <code>&lt;title&gt;</code> (que aparecerá en las pestañas del navegador
+	    y cuando se guarda en los bookmarks). También en esta sección es donde se suelen importar o implementar las hojas de estilo
+	    y el código JavaScript. Finalmente también es posible definir meta-tags, algunos son de utilidad para el navegador,
+	    como el que define el encoding o algunos que pueden ser de utilidad para los buscadores.</p>
+
+	<h2>Etiqueta del cuerpo <code>&lt;body&gt;</code> (<a href="./aux2-2.html">aux2-2.html</a>)</h2>
+
+	<p>La etiqueta del cuerpo contiene normalmente todos los elementos visibles de la página. Aquí van elementos como los
+	    contenedores <code>&lt;div&gt;</code>, párrafos <code>&lt;p&gt;</code>, listas <code>&lt;ul&gt;</code> <code>&lt;ol&gt;</code>, tablas <code>&lt;table&gt;</code>, imágenes <code>&lt;img&gt;</code> o links <code>&lt;a&gt;</code>, entre otros.</p>
+
+	<p>El ejemplo de uso de los elementos más comunes esta en archivo de ejemplo <a href="./aux2-2.html">aux2-2.html</a>. Se pueden revisar todos los tags disponibles en:  <a href="http://www.webmonkey.com/2010/02/html_cheatsheet/">http://www.webmonkey.com/2010/02/html_cheatsheet/</a></p>
+
+	<h2>Identificación de etiquetas</h2>
+
+	<p>Todo elemento HTML puede ser identificado de manera única al utilizar el atributo <code>id</code> o se pueden identificar familias a través de <code>class</code>. Esto permite controlar mejor los elementos a los que se aplican estilos con CSS o cuando se modifica o accede a la estructura del documento HTML con JavaScript.</p>
+
+	<p>Ejemplo de elemento con identificador <code>parrafo_principal</code> y de clase <code>parrafos_importantes</code>:</p>
+
+	<pre><code>&lt;p class="parrafos_importantes" id="parrafo_principal"&gt;Este es un párrafo principal y 
+	que pertenece además a la clase de párrafos importantes&lt;/p&gt;
+	</code></pre>
+
+	<h2>Hojas de Estilo (CSS)</h2>
+
+	<p>Las hojas de estilo o Cascading Style Sheets (CSS) permiten separar del HTML las declaraciones que manipulan el diseño
+	de la página desplegada: imágenes, colores, transiciones, etc. De esta forma HTML sólo se preocupa de la estructura
+	documento mientras que las hojas de estilo se preocupan de cómo se desplegará.</p>
+
+	<p>Es posible incrustar CSS en un documento HTML o se puede incluir desde un archivo separado que los contiene. Ambas estrategias tienen pros y contras. En general es mejor mantener todas las declaraciones en un archivo con extensión .css separado.</p>
+
+	<p>Para incrustar declaraciones CSS en el documento HTML se agrega lo siguiente:</p>
+
+	<pre><code>&lt;style type="text/css"&gt;
+	    a{
+	        font-weight: bold;
+	        color: red;
+	    }
+	&lt;/style&gt;
+	</code></pre>
+
+	<p>Para importar una hoja de estilo se debe usar:</p>
+
+	<pre><code>&lt;link rel="stylesheet" href="estilos.css" type="text/css"&gt;
+	</code></pre>
+
+	<p>Una directriz de CSS puede apuntar a una etiqueta, una clase o a un elemento en particular. Ejemplos funcionales se encuentran en <a href="./aux2-3.html">aux2-3.html</a></p>
+
+	<h3>Por etiqueta</h3>
+
+	<p>Es posible aplicar un estilo a todas las etiquetas de un tipo. Por ejemplo, para cambiar el diseño de todas las etiquetas para los enlaces, se puede utilizar:</p>
+
+	<pre><code>a{
+	    font-weight: bold;
+	    color: red;
+	}
+	</code></pre>
+
+	<h3>Por clase</h3>
+
+	<p>Es posible definir una familia de elementos a través del atributo <code>class</code>. Por ejemplo para definir una clase que modifique el estilo de ciertos párrafos utilizaremos la clase <code>parrafo_principal</code>:</p>
+
+	<pre><code>&lt;p class="parrafo_principal"&gt;Este es un párrafo principal&lt;/p&gt;
+	</code></pre>
+
+	<p>Luego, en el código CSS se identifican las reglas para las clases al anteponer un punto (.)
+	antes del nombre de la clase:</p>
+
+	<pre><code>.parrafo_principal{
+	    border: 1px black solid;
+	    padding: 10px;
+	    width: 70%;
+	}
+	</code></pre>
+
+	<h3>Por elementos particulares</h3>
+
+	<p>Si se desea definir una regla para un elemento identificado por su <code>id</code>, se debe anteponer el símbolo #
+	antes del nombre del id. Por ejemplo para el elemento</p>
+
+	<pre><code>&lt;p id="parrafo_especial"&gt;Este es un párrafo especial&lt;/p&gt;
+	</code></pre>
+
+	<p>Se define su regla como </p>
+
+	<pre><code>#parrafo_especial{
+	    border: 10px black solid;
+	    padding: 15px;
+	    width: 60%;
+	}
+	</code></pre>
+
+
+	<h2>Formularios</h2>
+
+	<p>Los formularios permiten generar un espacio donde el usuario puede ingresar información para interactuar con el servicio web que estemos implementando. HTML ofrece un conjunto de etiquetas para desplegar distintos tipos de entradas y elementos para permitir el ingreso eficiente y rápido de información. Una lista de los elementos disponibles para implementar formularios se encuentra en la <a href="http://www.w3.org/TR/html5/forms.html">W3C</a>.</p>
+
+	<p>Un formulario básico se compone de la etiqueta <code>form</code> la cual tiene en sus atributos el tipo de método HTTP a ejecutar al enviarse (POST, GET, etc), la acción a ejecutarse (a.k.a dirección de destino de los datos) y en su cuerpo se encuentran los elementos que componen el formulario. Generalmente se recomienda tener el botón con la acción 'submit' para poder ejecutar el envío de los datos <a href="./aux2-4.html">aux2-4.html</a>:</p>
+
+	<pre><code>&lt;form method="POST" action="procesar.php"&gt;
+	    &lt;input type="text" name="campoTexto"&gt;&lt;/input&gt;
+	    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+	&lt;/form&gt;
+	</code></pre>
+
+	<h2>JavaScript</h2>
+
+	<p>JavaScript es un lenguaje de programación que se encuentra presente en la mayoría de los navegadores modernos. Permite realizar acciones que para revisar o manipular los datos desplegados en un documento HTML. Al igual que con CSS, se puede implementar dentro del documento HTML o en un archivo separado. Se recomienda que el código JavaScript esté siempre en un archivo .js separado del html.</p>
+
+	<p>Para incrustar JavaScript en un documento HTML se debe utilizar:</p>
+
+	<pre><code>&lt;script type="text/javascript"&gt;
+	    function mostrar_alerta(){
+	        window.alert("hola!");
+	    }
+	&lt;/script&gt;
+	</code></pre>
+
+	<p>Para importar JavaScript desde un archivo externo, se utiliza:</p>
+
+	<pre><code>&lt;script src="cualquier_nombre_de_archivo.js" type="text/javascript"&gt;&lt;/script&gt;
+	</code></pre>
+
+	<p>Un método JavaScript se puede llamar de distintas maneras. La mas usual es al generarse un evento en el documento. Por ejemplo al presionar un botón:</p>
+
+	<pre><code>&lt;button onclick="mostrar_alerta()"&gt;Mostrar alerta&lt;/button&gt;
+	</code></pre>
+
+	<p>En este caso el atributo <code>onClick</code> indica que si el elemento recibe un click por parte del usuario, se debe ejecutar el método <code>mostrar_alerta</code> que se debería encontrar entre los métodos definidos en el HTML o en los archivos externos que se han importado.</p>
+
+	<p>La lista oficial de eventos que pueden asociarse a un elemento se encuentra en la <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers-on-elements,-document-objects,-and-window-objects">W3C</a>.</p>
+
+	<p>Ejemplos de funciones JS se encuentran en el archivo <a href="./aux2-5.html">aux2-5.html</a>.</p>
+
+	<h2>Formularios y JavaScript</h2>
+
+	<p>Los formularios permiten generar un espacio donde el usuario puede ingresar información para interactuar con el servicio web que estemos implementando. HTML ofrece un conjunto de etiquetas para desplegar distintos tipos de entradas y elementos para permitir el ingreso eficiente y rápido de información. Una lista de los elementos disponibles para implementar formularios se encuentra en la <a href="http://www.w3.org/TR/html5/forms.html">W3C</a>.</p>
+
+	<p>Un formulario básico se compone de la etiqueta <code>form</code> la cual tiene en sus atributos el tipo de método HTTP a ejecutar al enviarse (POST, GET, etc), la acción a ejecutarse (la dirección de destino de los datos) y en su cuerpo se encuentran los elementos que componen el formulario. Generalmente se recomienda tener el botón con la acción 'submit' para poder ejecutar el envío de los datos, por ejemplo:</p>
+
+	<pre><code>&lt;form method="POST" action="procesar.php"&gt;
+	    &lt;input type="text" name="campoTexto" id="campoTexto"&gt;&lt;/input&gt;
+	    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+	&lt;/form&gt;
+	</code></pre>
+
+	<p>Dado que los formularios son hechos por humanos, existe la (enorme) posibilidad de éstos sean mal ingresados (inocentemente o maliciosamente) y si son guardados sin un filtrado previo al sitio web podría vulnerar nuestro servidor.
+	Afortunadamente poseemos herramientas para verificar la información antes que cause algún desastre. Una forma es por el lado del cliente, con JavaScript y otra es por el lado del servidor, con el lenguaje con el que se implemente el servicio (PHP, Python, Ruby, etc).</p>
+
+	<p>En esta ocasión revisaremos como hacerlo con JavaScript. JavaScript nos permite acceder a los elementos presentes en el documento que se encuentra desplegado. Para ello la forma más usual es a través del método <code>document.getElementById(id)</code>. Este método retornará el elemento con el <code>id</code> entregado o NULL si no se ha encontrado. El siguiente ejemplo busca el elemento con id=campoTexto y verificará si posee más de 1 carácter y menos de 5:</p>
+
+	<pre><code>function verificaValor(){
+	    var elto = document.getElementById('campoTexto');
+	    if(elto.value.length &lt; 1 || elto.value.length &gt; 5)
+	        alert('El texto no puede ser vacio ni poseer más de 5 carácteres.');
+	}
+	</code></pre>
+
+	<p>Además de servir para verificar los datos ingresados en formularios. JavaScript nos permite agregar todo tipo de funcionalidades que pueden gatillarse y modificarse en función de los datos ingresados. En los ejemplos en <a href="./aux2-5.html">aux2
+		-5.html</a>, <a href="./aux2-6.js">aux2-6.js</a>, <a href="./aux2-7.html">aux2-7.html</a> y  se muestran otros usos de la interacción de JavaScript con el documento HTML.</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<title>Formulario JS</title>
+	<meta charset="UTF-8" />
+	<script>
+		function valida_clave(){
+			var ER = /^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;
+			var entrada = document.getElementById("clave").value;
+			if(entrada.match(ER)){
+				document.getElementById("resclave").style.backgroundColor="green";
+				return true;
+			}
+			else{
+				document.getElementById("resclave").style.backgroundColor="red";
+				return false;
+			}
+		}
+		function valida_archivo(){
+			var permitidas = new Array(".gif",".jpg",".png");
+			var entrada = document.getElementById("archivo").value;
+			var exten = (entrada.substring(entrada.lastIndexOf("."))).toLowerCase();
+			var res = 	permitidas.filter(
+						function(a){
+							return a==exten;
+						}
+					)
+			var msg = document.getElementById("resarchivo");
+			msg.style.width="500px";
+			msg.innerHTML="La extension de su archivo es "+exten;
+			if(res.length>0){
+				msg.style.color="green";
+				return true;
+			}else{
+				msg.style.color="red";
+				return false;
+			}
+		}
+
+		function validar(){
+			isOK = valida_clave() && valida_archivo();
+			if(!isOK){alert('Los datos del formulario son inválidos')}
+			return isOK;
+		}
+	</script>
+	<style>
+		.resultado{
+			width: 15px;
+			height: 15px;
+			display: inline-block;
+			border-radius: 50% 50%;
+		}
+	</style>
+</head>
+<body>
+	<h1>Base para enviar formularios con archivos</h1>
+	<div>
+		<form action='fin.html' method='POST' enctype="multipart/form-data" onSubmit="return validar();" id="formulario">
+			<label for='clave'>Ingrese su clave</label>
+			<input id='clave' name='clave' type='text' onkeyup="valida_clave();">
+			<div id='resclave' class="resultado"></div>
+			<br>
+			<span style='font-size:10px;'>Entre 8 y 10 caracteres, por lo menos un digito y un alfanumérico, y no puede contener caracteres espaciales</span>
+			<br>
+			<label for='archivo'>Elija su archivo</label>
+			<input id='archivo' name='archivo' type='file' onchange="valida_archivo()">
+			<div id='resarchivo' class="resultado"></div>
+			<br>
+			<br>
+			<input type="submit" value="enviar">
+			<input type="reset" value="limpiar">
+		</form>
+	</div>
+</body>
+</html>

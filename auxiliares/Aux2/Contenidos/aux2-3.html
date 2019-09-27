@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo estilos</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+		a{
+			font-weight: bold;
+			color: red;
+		}
+
+		.parrafo_alfa{
+			border: 1px black solid;
+			padding: 10px;
+			width: 70%;
+		}
+
+		.parrafo_beta{
+			background-color: black;
+			color: white;
+		}
+		
+		#miTitulo{
+			text-shadow: 3px 3px 5px brown;
+			text-decoration: underline;
+			font-size: 40px;
+			font-weight: bold;
+			font-style: italic;
+			color: red;
+		}
+
+		#miComic{
+			border-radius: 70px;
+			box-shadow: 5px 5px 20px 1px blue;
+		}
+	</style>
+</head>
+<body>
+	<h2 style="color:blue">Ejemplos de estilos</h2>
+	Este es un ejemplo de pagina para ver estilos
+	<br>
+	veamos parrafos alfa:
+	<p class="parrafo_alfa">Un parrafo con estilo de una hoja de estilos incorporada<br>
+	<a href="www.google.cl">Este es un link con el estilo de la hoja</a>
+	</p>
+
+	<p class="parrafo_alfa">Otro parrafo alfa</p>
+
+	<p class="parrafo_alfa">Con esto se entiende que la regularidad de uso da efectos interesantes...</p>
+	<br>
+
+	Vamos con el parrafo beta:
+	<p class="parrafo_beta">Un parrafo beta, que se ve afectado por la hoja de estilos incluida</p>
+
+	<p class="parrafo_beta" style="width:300px;">Un parrafo beta, Ahora con estilos definidos en el tag</p>
+	
+	<br><br>
+	<p>Aquí definimos los elementos que tienen las ID 'miTitulo' y 'miComic' que declaramos al final de nuestro CSS incrustado.</p>
+	<span id="miTitulo">Ahora otro comic:</span>
+	<br>
+	<img id="miComic" alt="miComic" src="juanelo.png">
+</body>
+</html>

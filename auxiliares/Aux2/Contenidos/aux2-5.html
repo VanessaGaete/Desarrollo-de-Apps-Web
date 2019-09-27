@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplos JS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript">
+		function mostrar_alerta(){
+			window.alert("BOOM!!");
+		}
+
+		function preguntar(){
+			var res = window.confirm("Le gustaria participar en una encuesta?");
+			if(res){
+				var res2 = window.confirm("Quiere el fondo rojo?");
+				if(res2)
+					fondoRojo();
+				else
+					fondoBlanco();
+			}else
+				window.alert("buuuhhh mala onda :(");
+		}
+
+		function fondoRojo(){
+			document.body.style.backgroundColor="red";
+		}
+		function fondoBlanco(){
+			document.body.style.backgroundColor="white";
+		}
+	</script>
+</head>
+<body>
+	<h2>Ejemplo basico js</h2>
+	no presione el boton malo! <button onclick="mostrar_alerta()">boton malo</button>
+	<br><br>
+	no te poses en la imagen! D: <img style="width: 50px" src="bomb.jpg" alt="mifoto" onMouseOver="fondoRojo()" onMouseOut="fondoBlanco()">
+	<br><br>
+	tiene tiempo? <button onclick="preguntar()">haga clic!</button>
+	<br><br>
+</body>
+</html>

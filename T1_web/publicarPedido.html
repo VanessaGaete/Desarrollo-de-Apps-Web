@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Publicar pedido</title>
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="regycomsol.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="talla-solicitante.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="v2.js"></script>
+    <style>
+		h1 {
+  			font-size: 80px;
+  			color: black;
+  		}
+  		input {
+    		color: blue;
+  		}
+    	.titulo {
+    		background-color: lightblue;
+  		}
+  		body {
+    		background-color: lightblue;
+  		}
+	  </style>
+
+</head>
+<body>
+
+	
+<div class="formulario" style="margin-left: 30px; margin-right: 30px;"> 
+	<h1 class="titulo">Publicar pedido</h1>
+
+	<form method="POST" action="submit">
+		Nombre disfraz <input type="text" id="nombre-disfraz" name="nombre-disfraz" size=30><br><br>
+		Descripción disfraz <br>
+		<textarea id="descripcion-disfraz" name="descripcion-disfraz" cols="40" rows="8"></textarea> <br><br>
+		<label for="categoria-solicitante" class="text-field">Categoría</label>
+    	<br>
+    	<select id="categoria-solicitante" name="categoria-solicitante">
+    		<option value="0">Seleccione categoria</option>
+			   <option value="1">Infantil niña</option>
+      		<option value="2">Infantil niño</option>
+      		<option value="3">Infantil unisex</option>
+      		<option value="4">Mujer</option>
+      		<option value="5">Hombre</option>
+      		<option value="6">Adulto unisex</option>
+    	</select>
+
+    	<select id="talla-solicitante" name="talla-solicitante">
+    		<option value="">-- seleccione talla -- </option>
+		</select>
+		<br><br>
+		Nombre solicitante <input type="text" id="nombre-solicitante" name="nombre-solicitante" size=80><br><br>
+		Email solicitante <input type="email" id="email-solicitante" name="email-solicitante" size=30><br><br>
+		Número de Contacto <input type="text" id="celular-solicitante" name="celular-solicitante" size=15><br><br>
+		Region Solicitante <select id="regiones" name="region-solicitante"></select><br><br>
+		Comuna Solicitante <select id="comunas" name="comuna-solicitante"></select><br><br>
+    <button type="button" onclick="verificar_nombre();">Enviar</button>
+		
+	</form>
+</div>
+</body>
+</html>

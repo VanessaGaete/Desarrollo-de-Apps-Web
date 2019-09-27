@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplos JS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="aux2-6.js" type="text/javascript"></script>
+</head>
+<body>
+	<h2>Ejemplo en formularios</h2>
+	
+	<h3>Formulario verificado</h3>
+	<form action="http://users.dcc.uchile.cl/~acadiz/cc5002/taller1.php" method="POST" id="form_ejemplo">
+		Ingresar texto de al menos 1 carácter y máximo 5: <input type="text" id="campoTexto" name="texto">
+		<button type="button" onclick="verificar_form();">Enviar</button>
+	</form>
+	
+	<h3>Formularios con interacciones</h3>
+	Escriba un mensaje <input id="prueba1" value="" name="mensaje"> <button onclick="mostrarAlerta()">lanzar mensaje</button>
+	<br><br><br>
+
+	<div style="width: 300px;border: 1px black solid">
+		Contrato<br>
+		Yo <span id="nombre">____</span>, cedo todos mis bienes a la teleton.<br> Lo juro!
+	</div><br>
+	escriba su nombre<input id="prueba2" value="" type="text"> <button onclick="cambiaNombre()">Firmar</button>
+	<br><br><br>
+
+	Calculadora:<br>
+	valor1: <input id="prueba3" value=""><br>
+	valor2: <input id="prueba4" value=""><br>
+	<input name="ope" id="suma" type="radio" checked="checked">+ <br>
+	<input name="ope" id="mult" type="radio">* <br>
+	<input name="ope" id="elev" type="radio">^ <br>
+	<button onclick="calcular()">calcular</button>
+	<span id="res">___</span>
+	
+</body>
+</html>
