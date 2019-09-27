@@ -40,12 +40,12 @@ $db->close();
 </head>
 <body>
 
-	
-<div class="formulario" style="margin-left: 30px; margin-right: 30px;"> 
+
+<div class="formulario" style="margin-left: 30px; margin-right: 30px;">
 	<h1 class="titulo">Agrega tu Disfraz</h1>
 
 	<form id="myform" method="post" action="procesar_orden.php" onsubmit="return dataValidator();">
-		
+
     <label for="region" class="text-field">Región</label>
     	<select id="regiones" name="region">
       	<?php foreach($regiones as $region){ ?>
@@ -55,23 +55,21 @@ $db->close();
 
     <script>var regiones = document.getElementById("regiones").value;</script>
 
-    <?php 
+    <?php
       $db = DbConfig::getConnection();
-      $r= '<script  language="javascript"> document.getElementById("regiones").value </script>';
       $comunas= getComunas($db, $r);
-      $db->close(); 
+      $db->close();
     ?>
 
-   		
-      <label for="comuna" class="text-field">Comuna</label>
+
+    <label for="comuna" class="text-field">Comuna</label>
     	<select id="comunas" name="comuna">
-      <?php foreach($comunas as $comuna){ ?>
-			<option value="<?php echo $comuna['id']; ?>"><?php echo $comuna['nombre']; ?></option>
-			<?php } ?>
+      	<?php foreach($comunas as $comuna){ ?>
+				<option value="<?php echo $comuna['id']; ?>"><?php echo $comuna['nombre']; ?></option>
+				<?php } ?>
     	</select>
 		  Nombre disfraz <input type="text" id="nombre-disfraz" name="nombre-disfraz" size=30 ><br><br>
-		  <?php ?>
-		
+
     Descripción disfraz <br>
 		<textarea id="descripcion-disfraz" name="descripcion-disfraz" cols="40" rows="8"></textarea> <br><br>
 		<label for="categoria" class="text-field">Categoría</label>
@@ -105,7 +103,7 @@ $db->close();
 		<input type="submit" value="Crear mi pizza">
 		<button type="button" onclick="verificar_nombre();">Enviar</button>
 	</form>
-	
+
 </div>
 <script>
 	function addPhotoInput(){
